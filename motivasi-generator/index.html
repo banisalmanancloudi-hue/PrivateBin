@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NurMotivasi — Generator Gambar Motivasi</title>
+  <meta name="description" content="Generator kartu gambar motivasi, islami, kata mutiara, dan semangat belajar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">☾</span><div><strong>NurMotivasi</strong><small>Quote image studio</small></div></div>
+    <a href="#studio" class="ghost">Mulai membuat →</a>
+  </header>
+
+  <main id="studio" class="shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">CREATE • REFLECT • KEEP GOING</span>
+        <h1>Ubah kata-kata baik menjadi <em>gambar yang menguatkan.</em></h1>
+        <p>Buat konten motivasi, islami, kata mutiara, dan semangat belajar dalam hitungan detik.</p>
+      </div>
+      <div class="hero-note">“Sedikit demi sedikit, tetap melangkah.”</div>
+    </section>
+
+    <section class="studio-grid">
+      <aside class="panel controls">
+        <div class="section-title"><span>01</span><h2>Isi konten</h2></div>
+        <label>Kategori
+          <select id="category">
+            <option value="motivasi">Motivasi</option>
+            <option value="islami">Islami</option>
+            <option value="mutiara">Kata Mutiara</option>
+            <option value="belajar">Semangat Belajar</option>
+          </select>
+        </label>
+        <label>Kalimat utama
+          <textarea id="quote" rows="5" placeholder="Tulis kalimatmu di sini..."></textarea>
+        </label>
+        <div class="quick">
+          <button data-quote="Hari ini mungkin berat, tetapi kamu tidak harus berhenti.">Contoh motivasi</button>
+          <button data-quote="Jaga niat, rapikan ikhtiar, lalu serahkan hasil kepada Allah.">Contoh islami</button>
+          <button data-quote="Tidak semua proses harus terlihat untuk menjadi berarti.">Contoh mutiara</button>
+          <button data-quote="Belajar satu halaman hari ini lebih baik daripada menunggu sempurna.">Contoh belajar</button>
+        </div>
+
+        <div class="section-title compact"><span>02</span><h2>Gaya visual</h2></div>
+        <div class="theme-grid" id="themes">
+          <button class="theme active" data-theme="night"><i></i>Midnight</button>
+          <button class="theme" data-theme="sand"><i></i>Sand</button>
+          <button class="theme" data-theme="forest"><i></i>Forest</button>
+          <button class="theme" data-theme="rose"><i></i>Rose</button>
+        </div>
+
+        <label>Ukuran
+          <select id="ratio">
+            <option value="square">1:1 — Feed</option>
+            <option value="portrait">4:5 — Instagram</option>
+            <option value="story">9:16 — Story</option>
+          </select>
+        </label>
+
+        <button id="generate" class="primary">Generate gambar <span>✦</span></button>
+      </aside>
+
+      <section class="preview-area">
+        <div class="preview-head"><div><span class="eyebrow">LIVE PREVIEW</span><h2>Pratinjau</h2></div><span id="status" class="status">Siap</span></div>
+        <div class="canvas-wrap"><canvas id="canvas"></canvas></div>
+        <div class="actions">
+          <button id="download" class="primary">Download PNG ↓</button>
+          <button id="copy" class="secondary">Salin teks</button>
+          <button id="random" class="secondary">Acak inspirasi ✦</button>
+        </div>
+        <p class="hint">Semua rendering dilakukan di browser. Tidak ada teks yang dikirim ke server.</p>
+      </section>
+    </section>
+
+    <section class="ideas">
+      <div><span class="eyebrow">IDE KONTEN</span><h2>Empat suasana, satu tujuan: terus bertumbuh.</h2></div>
+      <div class="idea-list">
+        <button data-cat="motivasi"><b>01</b><span>Motivasi harian</span><small>Untuk hari yang terasa berat.</small></button>
+        <button data-cat="islami"><b>02</b><span>Renungan islami</span><small>Tenang, ikhtiar, tawakal.</small></button>
+        <button data-cat="mutiara"><b>03</b><span>Kata mutiara</span><small>Singkat, hangat, bermakna.</small></button>
+        <button data-cat="belajar"><b>04</b><span>Semangat belajar</span><small>Fokus pada proses dan konsistensi.</small></button>
+      </div>
+    </section>
+  </main>
+  <footer>NurMotivasi • Buat baik, bagikan baik.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
