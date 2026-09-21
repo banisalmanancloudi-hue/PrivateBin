@@ -23,7 +23,7 @@ function wrap(text,max){const words=text.trim().split(/\s+/);const lines=[];let 
  for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>max&&line){lines.push(line);line=word}else line=test}if(line)lines.push(line);return lines}
 function draw(){
  const w=canvas.width,h=canvas.height,p=palettes[theme];
- const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,p.bg1);g.addColorStop(1,p.bg2);ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+ const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,p.bg1);g.addColorStop(1,p.bg2);ctx.fillStyle=g;ctx.fillRect(0,0,w,h); if(window.aiImage){ctx.save();ctx.globalAlpha=.82;ctx.drawImage(window.aiImage,0,0,w,h);ctx.restore();}
  const glow=ctx.createRadialGradient(w*.78,h*.16,20,w*.78,h*.16,w*.6);glow.addColorStop(0,p.accent+"30");glow.addColorStop(1,"transparent");ctx.fillStyle=glow;ctx.fillRect(0,0,w,h);
  ctx.strokeStyle=p.accent+"55";ctx.lineWidth=2;ctx.beginPath();ctx.arc(w*.5,h*.5,Math.min(w,h)*.36,0,Math.PI*2);ctx.stroke();
  ctx.fillStyle=p.accent;ctx.font="700 "+Math.max(22,w*.024)+"px Inter";ctx.textAlign="center";ctx.fillText(category==="islami"?"☾  RENUNGAN":"✦  "+category.toUpperCase(),w/2,h*.16);
